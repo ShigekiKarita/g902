@@ -1,6 +1,6 @@
 import numpy
 
-from g902.gmm import GMM
+from g902.gmm import GMM, SphericalGMM
 
 
 def test_mean_is_max():
@@ -18,3 +18,19 @@ def test_mean_is_max():
     print(xs)
     for m in range(n_mix):
         assert numpy.all(batch_prob[:, m] <= max_prob[m, m])
+
+
+def test_spherical_cov():
+    n_dim = 2
+    n_mix = 3
+    model = SphericalGMM(n_dim, n_mix)
+    model._cov_value = numpy.arange(0, n_mix)
+    assert model.cov.shape == (n_mix, n_dim, n_dim)
+    for m in range(n_mix):
+        for i in range(n_dim):
+            for j in range(n_dim):
+                v = model.cov[m, i, j]
+                if i == j:
+                    assert v == m
+                else:
+                    assert v == 0.0
