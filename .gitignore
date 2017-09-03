@@ -1,0 +1,9 @@
+*
+!*/
+
+build
+
+!*.py
+!*.ipynb
+!*.md
+!.gitignore
