@@ -13,5 +13,6 @@ setup(
     author='Shigeki Karita',
     author_email='shigekikarita@gmail.com',
     url='https://github.com/ShigekiKarita',
-    packages=['g902']
+    packages=['g902'],
+    requires=['numpy']
 )
