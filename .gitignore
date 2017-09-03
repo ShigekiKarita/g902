@@ -1,8 +1,10 @@
 *
 !*/
 
+*checkpoints
 build
 
+!*.png
 !*.py
 !*.ipynb
 !*.md

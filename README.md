@@ -1,11 +1,7 @@
 # g902
 
-numpy and theano based library for graphical model and training EM algorithms
+study of graphical model and EM algorithms
 
-## models
+![gmm](examples/gmm.png)
 
-+ real value
-  + Gaussian mixture model (GMM)
-+ complex value
-+ binary value
-+ categorical value
+since 2017.09.02
